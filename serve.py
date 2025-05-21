@@ -28,7 +28,7 @@ def classify_image(img_path):
         with torch.no_grad():
             output = model(input_tensor)
             prob = torch.sigmoid(output).item()
-        return "content" if prob > 0.5 else "decorative"
+        return "decorative" if prob > 0.5 else "contentful"
     except Exception as e:
         return f"error: {str(e)}"
 
